@@ -30,13 +30,11 @@ function Chunk(x,y){
 			mesh.geometry.vertices[j*11+i].z=get_noise(x+i/10,y+j/10)
 		}
 	}
-	p=0
+	let p=0
 	for (var f of mesh.geometry.faces){
 		y=mesh.geometry.vertices[Math.floor(p)].z
-		var fi=mesh.geometry.faces.indexOf(f)
 		for (var i=0;i<3;i++){
-			// r=fi.map(0,mesh.geometry.faces.length,0,1)
-			r=y.map(-600,600,0,1)
+			let r=y.map(-600,600,0,1)
 			f.vertexColors[i]=new THREE.Color(r,r,r)
 		}
 		p+=0.5
